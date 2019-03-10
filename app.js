@@ -28,9 +28,7 @@ app.get('/edit/:id', (req, res)=>{
     userArray.forEach( user =>{
         if(user.userId === req.params.id){
             editUser = user;
-            console.log("Get - Edit user name" + editUser.userName);
         }
-        console.log(" Get - User name" + user.userName);
     });
 
     res.render('edit', {title: 'Edit User', user: editUser })
@@ -67,12 +65,8 @@ app.post('/edit/:id', (req, res)=>{
          user.email = req.body.email;
          user.address = req.body.address;
          user.age = req.body.age;
-         console.log("hello")
      }
-     console.log("Post - User name" + user.userName);
-     console.log("Post - Edit user name" + editUser.userName);
  });
-    console.log("Post - user array " + userArray);
     res.redirect('/');
 });
 
