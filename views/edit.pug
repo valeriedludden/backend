@@ -1,0 +1,16 @@
+html
+    head
+        title= title
+    body
+        div
+            form(action='/edit' + user.userId, method='post')
+                input(type='text', name='userId', value=user.userId)
+                input(type='text', name='username', value=user.userName)
+                input(type='email', name='email', value=user.email)
+                input(type='text', name='address', value=user.address)
+                input(type='number', name='age', value=user.age)
+                input(type='submit', value='Submit Changes')
+        br
+
+        a(href='/') Back to homepage
+        a(href='/users') See all users
